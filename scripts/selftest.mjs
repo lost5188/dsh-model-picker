@@ -128,7 +128,7 @@ assert(display.some(g => g.id === 'dsh-picker-other'), 'fallback group exists');
 console.log('5. syntax');
 const targets = [
   'index.js', 'bin/dsh-model-picker.mjs', 'lib/helper.mjs',
-  'lib/discover.mjs', 'lib/patch.mjs', 'scripts/selftest.mjs',
+  'lib/discover.mjs', 'lib/patch.mjs', 'scripts/selftest.mjs', 'scripts/push-to-github.mjs',
 ];
 for (const rel of targets) {
   const r = spawnSync(process.execPath, ['--check', path.join(ROOT, rel)], { encoding: 'utf8' });

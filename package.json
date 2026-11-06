@@ -19,6 +19,7 @@
     "bin/dsh-model-picker.mjs",
     "lib",
     "scripts/selftest.mjs",
+    "scripts/push-to-github.mjs",
     "locale",
     "icon.svg",
     "cordis.patch.yml",

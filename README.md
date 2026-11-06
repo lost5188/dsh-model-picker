@@ -87,6 +87,34 @@ node bin/dsh-model-picker.mjs config    # 打印可编辑配置路径
 - 如果接管的是一个**已经被手工打过补丁**的渲染文件，插件会记录每一处改动的原文，`revert` 按记录逆序还原；想做到 100% 精确，先跑一次 `import-original <原始 client.js>`。
 - 插件不联网、不改账号、不改网关、不改 `settings-legacy.yaml`。
 
+## 上传到 GitHub / 以后再下载
+
+仓库自带一个推送脚本，token 只从环境变量读取，通过 HTTP header 传给 git，**不会写进 `.git/config`、不会打印、不会落盘**：
+
+```bash
+GITHUB_TOKEN=<只勾 repo 权限的 PAT> node scripts/push-to-github.mjs --private
+```
+
+Windows PowerShell：
+
+```powershell
+$env:GITHUB_TOKEN = "<PAT>"
+node scripts/push-to-github.mjs --private
+```
+
+它会创建（或复用）`dsh-model-picker` 仓库并推送当前分支。选项：`--name`、`--owner <组织名>`、去掉 `--private` 则建公开仓库。用完建议撤销这个 PAT。
+
+以后换机器：
+
+```bash
+git clone https://github.com/<OWNER>/dsh-model-picker.git
+cd dsh-model-picker
+node scripts/selftest.mjs
+node bin/dsh-model-picker.mjs check && node bin/dsh-model-picker.mjs apply
+```
+
+或者直接下载仓库的 ZIP / Release 包，解压后从第二条命令开始。
+
 ## 兼容性
 
 在 DSH NEXT `@deepseek-ai/dsh-client-ui-model-selection@0.2.1-rc.4` 上开发并验证。其他版本只要锚点一致也能用 —— 先跑 `check`，通过再 `apply`。宿主大版本升级后如果结构变了，`check` 会明确报出哪一步不兼容，此时不要强行应用，提 issue 附上 `check` 的输出即可。

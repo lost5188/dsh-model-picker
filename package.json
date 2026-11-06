@@ -1,0 +1,53 @@
+{
+  "name": "dsh-model-picker",
+  "version": "1.0.0",
+  "description": "Grouped, badged model picker for DeepSeek Harness / DSH NEXT. Pins your favourite models, auto-collects every free channel model so they never disappear again, and stays reversible.",
+  "private": true,
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "bin": {
+    "dsh-model-picker": "./bin/dsh-model-picker.mjs"
+  },
+  "files": [
+    "index.js",
+    "bin/dsh-model-picker.mjs",
+    "lib",
+    "scripts/selftest.mjs",
+    "locale",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "status": "node bin/dsh-model-picker.mjs status",
+    "check": "node bin/dsh-model-picker.mjs check",
+    "apply": "node bin/dsh-model-picker.mjs apply",
+    "revert": "node bin/dsh-model-picker.mjs revert",
+    "test": "node scripts/selftest.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-next",
+    "deepseek-harness",
+    "model-picker",
+    "model-selector",
+    "free-models"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

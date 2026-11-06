@@ -1,0 +1,169 @@
+{
+  "version": 2,
+  "showMeta": true,
+  "hideUnlisted": false,
+  "autoGroups": {
+    "enabled": true,
+    "dedupeVision": false,
+    "freeNameHints": ["免费", "x0.00", "x0.0"],
+    "badNameHints": ["额度用尽", "未实测", "地区受限", "⚠️", "🌏"],
+    "free": {
+      "enabled": true,
+      "label": "3  其他免费可用（含 WorkBuddy，自动收录）",
+      "badge": "免费·可用",
+      "tone": "green"
+    },
+    "other": {
+      "enabled": true,
+      "label": "4  其余模型（额度用尽 / 未实测 / 地区受限 / 其他）",
+      "badge": "其他",
+      "tone": "gray"
+    }
+  },
+  "groups": [
+    { "id": "daily", "label": "1  日常首选（无脑选这两个）" },
+    { "id": "scenes", "label": "2  按场景换（有专门用途）" }
+  ],
+  "models": [
+    {
+      "id": "cline-vision/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "group": "daily",
+      "name": "Nemotron 3 Nano Omni 30B（识图版）",
+      "badge": "默认·已选中",
+      "tone": "green",
+      "quality": "3/3 全对·稳定、不啰嗦",
+      "speed": "2.5s",
+      "tags": ["日常对话", "推理", "写代码", "◉可用识图"]
+    },
+    {
+      "id": "cline/recursive/flint-v1.0:free",
+      "group": "daily",
+      "name": "Flint V1.0",
+      "badge": "综合第一·最快且全对",
+      "tone": "green",
+      "quality": "3/3 全对·中文简洁",
+      "speed": "2.0s",
+      "tags": ["短问快答", "日常", "代码"]
+    },
+    {
+      "id": "our-free-model/nvidia/nemotron-3.5-super-vl:free",
+      "group": "scenes",
+      "name": "Kilo Nemotron 3.5 Super VL",
+      "badge": "◉ 识图首选",
+      "tone": "blue",
+      "quality": "3/3 全对·真图实测答出「Red」",
+      "speed": "2.8s",
+      "tags": ["识图", "长文", "极速"]
+    },
+    {
+      "id": "our-free-model/cohere/north-mini-code:free",
+      "group": "scenes",
+      "name": "Kilo North Mini Code",
+      "badge": "⌨ 代码首选",
+      "tone": "blue",
+      "quality": "3/3 全对·实测可用",
+      "speed": "极速档",
+      "tags": ["写代码", "日常对话"]
+    },
+    {
+      "id": "our-free-model/kilo-auto/free",
+      "group": "scenes",
+      "name": "Kilo Auto Free",
+      "badge": "⚡ 极速短问",
+      "tone": "green",
+      "quality": "3/3 全对·实测可用",
+      "speed": "极速档",
+      "tags": ["短问快答", "自动路由"]
+    },
+    {
+      "id": "our-free-model/reflection/beam-free",
+      "group": "scenes",
+      "name": "Kilo Beam 1.0",
+      "badge": "🟢 极速·备选",
+      "tone": "green",
+      "quality": "3/3 全对·实测可用",
+      "speed": "极速档",
+      "tags": ["推理", "日常"]
+    },
+    {
+      "id": "our-free-model/nvidia/nemotron-3-ultra-550b-a55b:free",
+      "group": "scenes",
+      "name": "Kilo Nemotron 3 Ultra",
+      "badge": "🧠 长文·复杂推理",
+      "tone": "blue",
+      "quality": "3/3 全对·实测可用",
+      "speed": "稳定档",
+      "tags": ["长文", "推理", "写代码"]
+    },
+    {
+      "id": "our-free-model/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "group": "scenes",
+      "name": "Kilo Nemotron 3 Nano Omni",
+      "badge": "💬 稳定日常",
+      "tone": "blue",
+      "quality": "3/3 全对·实测可用",
+      "speed": "稳定档",
+      "tags": ["日常对话", "推理"]
+    },
+    {
+      "id": "our-free-model/stealth/glyph-cluster",
+      "group": "scenes",
+      "name": "Kilo Glyph Cluster",
+      "badge": "🔵 稳定·备选",
+      "tone": "blue",
+      "quality": "3/3 全对·实测可用",
+      "speed": "稳定档",
+      "tags": ["日常", "代码"]
+    },
+    {
+      "id": "our-free-model/openrouter/free",
+      "group": "scenes",
+      "name": "Kilo OpenRouter Free Router",
+      "badge": "🔀 自动路由",
+      "tone": "blue",
+      "quality": "3/3 全对·实测可用",
+      "speed": "稳定档",
+      "tags": ["兜底", "自动选模"]
+    },
+    {
+      "id": "our-free-model/dots-studio/dots-3-note-preview:free",
+      "group": "scenes",
+      "name": "Kilo Dots3-Note Preview",
+      "badge": "📝 短笔记",
+      "tone": "amber",
+      "quality": "3/3 全对·实测可用",
+      "speed": "偏慢档",
+      "tags": ["摘要", "短文本"]
+    },
+    {
+      "id": "our-free-model/minimaxai/minimax-m3.1-flash",
+      "group": "scenes",
+      "name": "EAC Minimax M3.1 Flash",
+      "badge": "🟡 偏慢·备选",
+      "tone": "amber",
+      "quality": "3/3 全对·实测可用",
+      "speed": "偏慢档",
+      "tags": ["长文", "中文"]
+    },
+    {
+      "id": "our-free-model/nvidia/nemotron-3.5-lightning:free",
+      "group": "scenes",
+      "name": "Kilo Nemotron 3.5 Lightning",
+      "badge": "🟡 偏慢·备选",
+      "tone": "amber",
+      "quality": "3/3 全对·实测可用",
+      "speed": "偏慢档",
+      "tags": ["日常", "推理"]
+    },
+    {
+      "id": "our-free-model/combo:recommended-free",
+      "group": "scenes",
+      "name": "推荐免费组（自动兜底）",
+      "badge": "🟢 免费·推荐",
+      "tone": "green",
+      "quality": "组合策略",
+      "speed": "自动",
+      "tags": ["失败自动切换", "兜底"]
+    }
+  ]
+}

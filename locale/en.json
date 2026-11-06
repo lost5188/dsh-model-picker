@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Model Picker",
+    "description": "Groups the model dropdown into curated picks and auto-collected free models, with badges for quality, speed and capability. Display only; routing is unchanged."
+  }
+}

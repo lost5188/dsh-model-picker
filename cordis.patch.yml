@@ -1,0 +1,13 @@
+# dsh-model-picker bundle patch
+#
+# One Host plugin row. `autoApply` patches the renderer on every DSH start,
+# which also repairs the patch after a host update overwrites resources/app.
+# `watch` additionally re-checks while DSH is running.
+- insert:
+    - id: dsh-model-picker
+      name: 'dsh-model-picker'
+      config:
+        autoApply: true
+        watch: false
+        watchIntervalMinutes: 5
+        clientPath: ''

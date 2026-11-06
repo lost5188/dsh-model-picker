@@ -1,5 +1,7 @@
 # dsh-model-picker
 
+公开仓库：<https://github.com/lost5188/dsh-model-picker> —— 可以直接 `git clone`，或在仓库页面点 **Code → Download ZIP**，把链接发给别人即可。
+
 把 DSH / DSH NEXT 的模型下拉改成「精选置顶 + 免费自动收录 + 其余兜底」的分组视图，每行带角标、质量、速度与能力标签。**只改显示层**：选中时提交的仍是原来的 `provider/model`，账号渠道、`settings.json`、模型路由和 OpenAI 网关都不动。
 
 ## 它解决什么
@@ -26,7 +28,7 @@ DSH 官方下拉**严格按 provider 分组**（`@deepseek-ai/dsh-client-ui-mode
 ### 方式 A：作为 DSH 插件安装（推荐）
 
 ```bash
-git clone https://github.com/<OWNER>/dsh-model-picker.git
+git clone https://github.com/lost5188/dsh-model-picker.git
 cd dsh-model-picker
 npm test                 # 可选：自检，不需要 DSH
 node bin/dsh-model-picker.mjs check
@@ -87,33 +89,34 @@ node bin/dsh-model-picker.mjs config    # 打印可编辑配置路径
 - 如果接管的是一个**已经被手工打过补丁**的渲染文件，插件会记录每一处改动的原文，`revert` 按记录逆序还原；想做到 100% 精确，先跑一次 `import-original <原始 client.js>`。
 - 插件不联网、不改账号、不改网关、不改 `settings-legacy.yaml`。
 
-## 上传到 GitHub / 以后再下载
+## 公开仓库与分享
 
-仓库自带一个推送脚本，token 只从环境变量读取，通过 HTTP header 传给 git，**不会写进 `.git/config`、不会打印、不会落盘**：
+仓库是公开的，别人拿到链接后三条命令即可（使用者**不需要** GitHub 账号或任何 token）：
 
 ```bash
-GITHUB_TOKEN=<只勾 repo 权限的 PAT> node scripts/push-to-github.mjs --private
+git clone https://github.com/lost5188/dsh-model-picker.git
+cd dsh-model-picker
+npm test                                # 可选自检，不需要 DSH
+node bin/dsh-model-picker.mjs check     # 确认宿主版本兼容
+node bin/dsh-model-picker.mjs apply     # 注入
+```
+
+然后重启 DSH NEXT。没装 git 也可以打开仓库页面 → **Code → Download ZIP**，解压后从 `npm test` 那一步开始；或者用 Release 页面打包好的 zip。
+
+`scripts/push-to-github.mjs` 只是维护者推送更新用的，token 只从环境变量读取、通过 HTTP header 传给 git，**不会写进 `.git/config`、不会打印、不会落盘**：
+
+```bash
+GITHUB_TOKEN=<只勾 repo 权限的 PAT> node scripts/push-to-github.mjs
 ```
 
 Windows PowerShell：
 
 ```powershell
 $env:GITHUB_TOKEN = "<PAT>"
-node scripts/push-to-github.mjs --private
+node scripts/push-to-github.mjs
 ```
 
-它会创建（或复用）`dsh-model-picker` 仓库并推送当前分支。选项：`--name`、`--owner <组织名>`、去掉 `--private` 则建公开仓库。用完建议撤销这个 PAT。
-
-以后换机器：
-
-```bash
-git clone https://github.com/<OWNER>/dsh-model-picker.git
-cd dsh-model-picker
-node scripts/selftest.mjs
-node bin/dsh-model-picker.mjs check && node bin/dsh-model-picker.mjs apply
-```
-
-或者直接下载仓库的 ZIP / Release 包，解压后从第二条命令开始。
+不带 `--private` 即建公开仓库（默认）；加 `--private` 才建私有仓库。选项：`--name`、`--owner <组织名>`。用完建议撤销这个 PAT。
 
 ## 兼容性
 

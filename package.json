@@ -37,6 +37,14 @@
     "node": ">=22"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lost5188/dsh-model-picker.git"
+  },
+  "homepage": "https://github.com/lost5188/dsh-model-picker#readme",
+  "bugs": {
+    "url": "https://github.com/lost5188/dsh-model-picker/issues"
+  },
   "keywords": [
     "dsh",
     "dsh-plugin",

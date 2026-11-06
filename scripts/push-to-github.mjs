@@ -2,8 +2,9 @@
 /**
  * Create (or reuse) a GitHub repository and push this plugin to it.
  *
- *   GITHUB_TOKEN=... node scripts/push-to-github.mjs --private
+ *   GITHUB_TOKEN=... node scripts/push-to-github.mjs
  *
+ * Public by default; add --private for a private repository.
  * The token is read only from the environment (GITHUB_TOKEN / GH_TOKEN) and is
  * passed to git via an HTTP header, so it is never written to .git/config,
  * printed, or stored in any file. Give the token only the `repo` scope.
